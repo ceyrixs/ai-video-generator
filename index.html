@@ -4,65 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Video Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 3em;
-        }
-        section {
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-        }
-        .social-button {
-            background-color: #4c68d7;
-            color: white;
-        }
-        .social-button:hover {
-            background-color: #3b5bb6;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>AI Video Generator</h1>
-    <section>
-        <h2>Create Amazing Videos</h2>
-        <p>Features:
-            <ul>
-                <li>Text-to-Video</li>
-                <li>Image-to-Video</li>
-                <li>Video Editing</li>
-            </ul>
-        </p>
-        <button>Create Video</button>
-        <button>Edit Video</button>
-    </section>
-    <section>
-        <h2>Share Your Creations</h2>
-        <div class="social-buttons">
-            <button class="social-button">Share on TikTok</button>
-            <button class="social-button">Share on Instagram</button>
-            <button class="social-button">Share on YouTube</button>
-            <button class="social-button">Share on Facebook</button>
+    <header>
+        <h1>AI Video Generator</h1>
+    </header>
+    <main>
+        <section id="text-to-video">
+            <h2>Text to Video</h2>
+            <textarea id="textInput" placeholder="Type your script here..."></textarea>
+            <button id="generateVideo">Generate Video</button>
+            <video id="generatedVideo" controls></video>
+        </section>
+        <section id="image-to-video">
+            <h2>Image to Video</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <button id="createVideoFromImage">Create Video</button>
+            <video id="imageVideo" controls></video>
+        </section>
+        <section id="video-editing">
+            <h2>Video Editing</h2>
+            <input type="file" id="videoUpload" accept="video/*">
+            <button id="editVideo">Edit Video</button>
+            <video id="editedVideo" controls></video>
+        </section>
+    </main>
+    <footer>
+        <button id="installPWA">Install App</button>
+        <div id="socialSharing">
+            <h3>Share on Social Media</h3>
+            <button id="shareFacebook">Share on Facebook</button>
+            <button id="shareTwitter">Share on Twitter</button>
         </div>
-    </section>
+    </footer>
 </body>
 </html>
